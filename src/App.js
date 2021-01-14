@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './components/Nav';
 import About from './components/About';
 import Blog from './components/Blog';
+import Error from './components/Error';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -12,9 +13,10 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route paht ="/" component={Home}/>
-          <Route path="/blog" component={Blog} />
-          <Route path="/about" component={About} />
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/blog" exact component={Blog}></Route>
+          <Route path="/about" exact component={About}></Route>
+          <Route component={Error}></Route>
         </Switch>
       </div>
     </Router>
